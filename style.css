@@ -1,0 +1,81 @@
+body{
+	background-color: #404040;
+	font-family: 'Lato', sans-serif;
+}
+h1{
+	font-size: 30px;
+}
+#container{
+		width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+		
+}
+	#logo{
+		background-color: black;
+		color: white;
+		text-align: center;
+		padding: 15px;
+		letter-spacing: 3px;
+	}
+	#menu{
+		margin-top: 15px;
+		margin-bottom: 15px;
+		background-color: #303030;;
+		color: #ffffff;
+		padding: 10px;
+	}
+	#nav{
+		float: left;
+		background-color: lightgrey;
+		width: 120px;
+		min-height: 620px;
+		padding: 10px;
+	}
+	#content{
+		float: left;
+		padding: 20px;
+		width: 640px;
+		min-height: 600px;
+		background-color: green;
+	}
+	#add{
+		float: left;
+		width: 160px;
+		min-height: 620px;
+		padding: 10px;
+		background-color: lightgray;
+	}
+	#footer{
+		clear: both;
+		background-color: black;
+		color: white;
+		text-align: center;
+		padding: 20px;	
+	}
+	
+	.option{
+		float: left;
+		min-width: 50px;
+		height:25px;
+		font-size: 18px;
+		padding:10px;
+		border-right: 2px solid #444444;
+		opacity: 0.8;
+	}
+	.option:hover{
+		background-color: #000000;
+		cursor: pointer;
+	}
+	
+	.optionL{
+		height:25px;
+		font-size: 18px;
+		padding:10px;
+		border-bottom: 2px dotted #444444;
+	}
+	.optionL:hover{
+		background-color: #f36742;
+		color: white;
+		cursor: pointer;
+	}
