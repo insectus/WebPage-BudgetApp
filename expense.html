@@ -37,15 +37,61 @@
 		</div>
 		<div class="option">
 			<a href = "balance.html" class="tilelink" title = "Bilans!">Bilans</a>
-		</div>
-		<div class="option">
-			<a href = "index.html" class="tilelink" title = "Wyloguj się!">Wyloguj</a>
-		</div>		      
+		</div>	      
 		<div style="clear:both;"></div>		      
 		</div>
 		
 		<div id="content">
 				<h3> Dodaj wydatek </h3>
+				
+				<div class="row">
+				
+					<fieldset>
+					
+						<legend> Kwora </legend>
+				
+						<input type="text" name="currency-field" id="currency-field" value="" data-type="currency" placeholder="1,000,000.00 PLN" required>
+				
+					</fieldset>
+				
+				</div>
+				
+				<div class="row">
+				
+					<fieldset>
+					
+						<legend> Data </legend>
+						
+						<input type="date" id="date" required>
+				
+					</fieldset>
+				
+				</div>
+				
+				<div class="row">
+				<fieldset>
+				
+					<legend> Kategoria </legend>
+			
+					<div><label><input type="radio" value="1" name="category" checked> Wynagrodzenie</label></div>
+					<div><label><input type="radio" value="2" name="category"> Odsetki bankowe </label></div>
+					<div><label><input type="radio" value="3" name="category"> Sprzedaż na allegro </label></div>
+					<div><label><input type="radio" value="3" name="category"> Inne</label></div>
+			
+				</fieldset>
+				</div>
+				
+				<div class="row">
+					<div><label for="komentarz"> Komentarz (opcjonalnie): </label></div>
+					<textarea name="komentarz" id="komentarz" rows="4" cols="80" maxlength="25" minlength="10"placeholder="np.: Przychody z tytułu Art. 197. §1 oraz Art. 282. KK"></textarea>
+				</div>
+				
+				<div class="row">
+					<input type="submit" value="[Dodaj]">
+					<input type="reset" value="[Anuluj]">
+				</div>
+</br></br>
+Na tej stronie użytkownik może dodawać swoje przychody. Na początku wpisuje wysokość kwoty, następnie korzystając z przycisku opcji (ang. radio button input) wybiera jedną konkretną kategorię. Na końcu może opcjonalnie dodać komentarz, czego dotyczy ten przychód (np. wybierając kategorie „Sprzedaż na allegro” w komentarzu może zapisać: „Rower”. Komentarz przede wszystkim przydaje się wtedy, kiedy użytkownik wybierze wariant „Inne”.
 		</div>
 		
 		
