@@ -43,26 +43,30 @@
 					<div class="row">					
 						<fieldset>						
 							<legend> Kwota </legend>				
-							<input type="text" name="currency-field" id="currency-field" value="" data-type="currency" placeholder="1,000.00 PLN" required>					
+							<input type="number" name="currency-field" id="currency-field" value="" data-type="currency" placeholder="0.00 PLN" required step="0.01" min="0">					
 						</fieldset>					
 					</div>
 					
 					<div class="row">				
 						<fieldset>						
 							<legend> Data </legend>						
-							<input type="date" id="date" required>				
+							<input type="date" id="date" required min="2000-01-01">				
 						</fieldset>				
 					</div>
 					
 					<div class="row">
 						<fieldset>
 							<legend> Kategoria </legend>
-							<div><label><input type="radio" value="1" name="category" checked> Wynagrodzenie</label></div>
-							<div><label><input type="radio" value="2" name="category"> Odsetki bankowe </label></div>
-							<div><label><input type="radio" value="3" name="category"> Sprzedaż na allegro </label></div>
-							<div><label><input type="radio" value="3" name="category"> Inne</label></div>				
+								<select class="custom-select" >
+									<option>Wynagrodzenie</option>
+									<option>Odsetki bankowe </option>
+									<option>Sprzedaż na allegro</option>
+									<option> Inne</option>
+								</select>		
 						</fieldset>
 					</div>
+					
+					
 					
 					<div class="row">
 						<div><label for="comment"> Komentarz (opcjonalnie): </label></div>
