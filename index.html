@@ -1,55 +1,82 @@
-<!DOCTYPE HTML>
-<html lang = "pl">
-
+<!DOCTYPE html>
+<html lang="pl">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
- <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aplikacja do zarządzania finansami osobistymi</title>
-<meta name = "description" content = "Zapanuj nad swoimi finansami">
-<meta name = "keywords"	content = "budżet, finanse, oszczędzanie, pieniądze, wydatki, przychody, szczęście">
-<!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css" type="text/css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<meta charset ="utf-8"/>
+	<title>Aplikacja do zarządzania finansami osobistymi</title>
+	<meta name = "description" content = "Zapanuj nad swoimi finansami"/>
+	<meta name = "keywords"	content = "budżet, finanse, oszczędzanie, pieniądze, wydatki, przychody, szczęście"/>
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
+	
 </head>
 
-	<body>
-	
-	<div id="container">
-		<div id="logo">
-			<h1> Aplikacja budżetowa</h1>
-		</div>	
-		<div id="menu">
-		<div class="option">
-			<a href = "index.html" class="tilelink" title = "Strona główna!">Strona główna</a>
-		</div>
-		<div class="option">
-			<a href = "expense.html" class="tilelink" title = "Wydatki!">Wydatki</a>
-		</div>
-		<div class="option">
-			<a href = "balance.html" class="tilelink" title = "Bilans!">Bilans</a>
-		</div>	      
-		<div style="clear:both;"></div>		      
-		</div>
-
+<body>
 		
-		<div id="content">
-			<h1 style=text-align:center> Witaj drogi użytkowniku!</h1>
-			<br>
-			Ta aplikacja ma za zadanie pomóc Ci w zarządzaniu Twoim budżetem.
-			<br><br>
-			Jeżeli nie założyłeś jeszcze konta przejdź do strony:  
-			<br><a href = "register.html" class="tilelink" title = "Rejestracja!" style=text-align:center>Rejestracja</a>
-			<br>
-			Jeżeli masz już konto to przejdź do strony logowania:	
-			<a href = "login.html" class="tilelink" title = "Logowanie!" style=text-align:center> Logowanie</a>
-			by móc w pełni korzystać z funkcjonalności aplikacji.
-		</div>
+		<header>
+	
+			<nav class="navbar navbar-dark bg-budget navbar-expand-lg">
+			
+				<a class="navbar-brand" href="index.html"><img src="img/currency.png" width="30" height="30" class="d-inline-block mr-1 align-bottom" alt="">Twój budżet</a>
+			
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			
+				<div class="collapse navbar-collapse" id="mainmenu">
+				
+					<ul class="navbar-nav mr-auto">
+					
+						<li class="nav-item active">
+							<a class="nav-link" href="index.html"> Start </a>
+						</li>
+						
+						
+						<li class="nav-item">
+							<a class="nav-link" href="expense.html" > Wydatki </a>
+						</li>
+						
+						<li class="nav-item">
+							<a class="nav-link" href="balance.html" > Bilans </a>
+						</li>
 
+					</ul>
+				
+				</div>
+			
+			</nav>
+		
+		</header>
+	
+	
+		<main>
+		
+			<section class="budget">
+					
+						<header >
+						
+							<h1> Witaj drogi użytkowniku!</h1>
+							<p>Ta aplikacja ma za zadanie pomóc Ci w zarządzaniu Twoim budżetem.</p>
+							
+						</header>
+					
+						<div class="container">
+		
+								<p>Jeżeli nie założyłeś jeszcze konta przejdź do strony: </p> 
+								<br><a href = "register.html" class="tilelink" title = "Rejestracja!" >Rejestracja</a><br>
+								<p>Jeżeli masz już konto to przejdź do strony logowania:	
+								<br><br><a href = "login.html" class="tilelink" title = "Logowanie!" > Logowanie</a><br>
+								by móc w pełni korzystać z funkcjonalności aplikacji.</p>
+					
+						</div>
+				
+				</div>
+			
+			</section>
+			
+		</main>
 		
 		<div id="footer">
 			Aplikacja budżetowa &copy; Wszelkie prawa zastrzeżone
@@ -57,8 +84,13 @@
 	
 	</div>
 	
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-		<script src="js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+	
+	
 	</body>
 
 </html>
