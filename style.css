@@ -36,15 +36,32 @@ h1
 
 .row
 {
-	height: 500px;
+	margin:0px;
+}
 
+.tilelink{
+	color: #ffff00 !important;
+	text-decoration: none !important;
+	display: block;
+	min-width: 50px;
+	height:25px;
+}
+
+.container
+{
+	width: 1000px;
+	height: 650px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #logincontainer
 {
 	background-color: white;
-	width: 300px;
+	width: 400px;
+	height: 325px;
 	padding: 50px;
+	padding-left: 35px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 50px;
@@ -55,11 +72,13 @@ h1
 #registrationcontainer
 {
 	background-color: white;
-	width: 300px;
-	padding: 50px;
+	width: 400px;
+	height: 475px;
+	padding: 35px;
+	padding-left: 35px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 50px;
+	margin-top: 25px;
 	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 	box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
@@ -134,50 +153,9 @@ input[type=reset]:hover
 	padding: 20px;	
 }
 
-.option{
-	float: left;
-	min-width: 50px;
-	height:25px;
-	font-size: 18px;
-	padding:10px;
-	border-right: 2px solid #444444;
-	opacity: 0.8;
-}
-.option:hover{
-	background-color: #000000;
-	cursor: pointer;
-}
-
-.optionL{
-	height:25px;
-	font-size: 18px;
-	padding:10px;
-	border-bottom: 2px dotted #444444;
-}
-.optionL:hover{
-	background-color: #f36742;
-	color: white;
-	cursor: pointer;
-}
-
-.tilelink{
-	color: #ffffff;
-	text-decoration: none;
-	display: block;
-	min-width: 50px;
-	height:25px;
-}
-.tilelink1{
-	color: #000000;
-	text-decoration: none;
-	display: block;
-	min-width: 50px;
-	height:25px;
-}
-
 .row
 {
-margin: 20px 10px;
+	margin: 20px 10px;
 }
 
 #balance
