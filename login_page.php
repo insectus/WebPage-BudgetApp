@@ -1,4 +1,16 @@
+<?php
+
+	session_start();
+	
+	if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
+		{
+			header('Location: balance.php');
+			exit();
+		}
+?>
+
 <!DOCTYPE HTML>
+
 <html lang = "pl">
 
 <head>
@@ -8,7 +20,7 @@
 	<meta name = "keywords"	content = "budżet, finanse, oszczędzanie, pieniądze, wydatki, przychody, szczęście"/>
 	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="main.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
 </head>
 
@@ -18,7 +30,7 @@
 	
 			<nav class="navbar navbar-dark bg-budget navbar-expand-lg">
 			
-				<a class="navbar-brand" href="index.html"><img src="img/currency.png" width="30" height="30" class="d-inline-block mr-1 align-bottom" alt="">Twój budżet</a>
+				<a class="navbar-brand" href="index.php"><img src="img/currency.png" width="30" height="30" class="d-inline-block mr-1 align-bottom" alt="">Twój budżet</a>
 			
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
 					<span class="navbar-toggler-icon"></span>
@@ -29,17 +41,21 @@
 					<ul class="navbar-nav mr-auto">
 					
 						<li class="nav-item">
-							<a class="nav-link" href="index.html"> Start </a>
+							<a class="nav-link" href="index.php"> Start </a>
 						</li>
 						
-						
-						<li class="nav-item">
-							<a class="nav-link" href="expense.html" > Wydatki </a>
-						</li>
-						
-						<li class="nav-item">
-							<a class="nav-link" href="balance.html" > Bilans </a>
-						</li>
+						<?php
+							if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
+							{											
+								'<li class="nav-item">
+									<a class="nav-link" href="expense.php" > Wydatki </a>
+								</li>
+								
+								<li class="nav-item">
+									<a class="nav-link" href="balance.php" > Bilans </a>
+								</li>';
+							}
+						?>
 
 					</ul>
 				
@@ -53,7 +69,7 @@
 		
 			<section class="budget">
 		
-				<div class="container">
+				<div class="container-fluid">
 					
 						<header >
 						
@@ -68,15 +84,19 @@
 						
 							<div class="col-sm-12 col-md-5">
 					
-								<form>
-								
-									<input type="text" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'" required>
-								
-									<input type="password" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" required>
+								<form action="login.php" method="post">
+	
+									<input type="text" name="lgn" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'" required>
+																
+									<input type="password" name="pwd" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" required>
 								
 									<input type="submit" value="Zaloguj się">
-								
+	
 								</form>
+								
+								<?php
+									if(isset($_SESSION['blad']))	echo $_SESSION['blad'];
+								?>
 								
 							</div>
 					
@@ -91,7 +111,7 @@
 		</main>
 		
 		<div id="footer">
-			Aplikacja budżetowa &copy; Wszelkie prawa zastrzeżone
+			Aplikacja budżetowa &copy; Wszelkie prawa zastrzeżone							
 		</div>
 	
 	</div>
@@ -101,7 +121,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	
 	<script src="js/bootstrap.min.js"></script>
-	
+
 	</body>
 
 </html>
