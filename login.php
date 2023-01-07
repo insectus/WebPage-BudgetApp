@@ -26,7 +26,7 @@
 		$pwd = htmlentities($pwd, ENT_QUOTES, "UTF-8");
 	
 		if ($rezultat = @$polaczenie->query(
-		sprintf("SELECT * FROM users WHERE username='%s'",
+		sprintf("SELECT * FROM users WHERE email='%s'",
 		mysqli_real_escape_string($polaczenie,$lgn))))
 		{
 			$ilu_userow = $rezultat->num_rows;
@@ -45,7 +45,7 @@
 				
 			} else {
 				
-				$_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
+				$_SESSION['blad'] = '<div class="error">Nieprawidłowy login lub hasło!</div>';
 				header('Location: login_page.php');
 				
 			}
