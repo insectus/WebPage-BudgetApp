@@ -86,17 +86,18 @@
 					
 								<form action="login.php" method="post">
 	
-									<input type="text" name="lgn" placeholder="login" onfocus="this.placeholder=''" onblur="this.placeholder='login'" required>
+									<input type="text" name="lgn" placeholder="E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" required>
 																
-									<input type="password" name="pwd" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" required>
+									<input type="password" name="pwd" placeholder="Hasło" onfocus="this.placeholder=''" onblur="this.placeholder='Hasło'" required>
+									
+									<?php
+										if(isset($_SESSION['blad'])) echo $_SESSION['blad'];
+									?>
 								
 									<input type="submit" value="Zaloguj się">
 	
 								</form>
 								
-								<?php
-									if(isset($_SESSION['blad']))	echo $_SESSION['blad'];
-								?>
 								
 							</div>
 					
@@ -110,9 +111,9 @@
 		
 		</main>
 		
-		<div id="footer">
-			Aplikacja budżetowa &copy; Wszelkie prawa zastrzeżone							
-		</div>
+		<footer class="navbar-text fixed-bottom text-center bg-dark">
+			Aplikacja budżetowa &copy; Wszelkie prawa zastrzeżone
+		</footer>
 	
 	</div>
 	

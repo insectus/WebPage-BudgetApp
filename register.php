@@ -60,7 +60,6 @@
 		
 		//Zapamiętaj wprowadzone dane
 		$_SESSION['fr_username'] = $username;
-		$_SESSION['fr_addres'] = $username;
 		$_SESSION['fr_email'] = $email;
 		$_SESSION['fr_haslo1'] = $haslo1;
 		$_SESSION['fr_haslo2'] = $haslo2;
@@ -89,18 +88,6 @@
 					$wszystko_OK=false;
 					$_SESSION['e_email']="Istnieje już konto przypisane do tego adresu e-mail!";
 				}		
-
-				//Czy nick jest już zarezerwowany?
-				$rezultat = $polaczenie->query("SELECT id FROM users WHERE username='$username'");
-				
-				if (!$rezultat) throw new Exception($polaczenie->error);
-				
-				$ile_takich_nickow = $rezultat->num_rows;
-				if($ile_takich_nickow>0)
-				{
-					$wszystko_OK=false;
-					$_SESSION['e_username']="Istnieje już gracz o takim nicku! Wybierz inny.";
-				}
 				
 				if ($wszystko_OK==true)
 				{
@@ -179,7 +166,7 @@
 											echo $_SESSION['fr_username'];
 											unset($_SESSION['fr_username']);
 										} 
-								?>" name="username" placeholder="imię" onfocus="this.placeholder=''" onblur="this.placeholder='imie'" required>
+								?>" name="username" placeholder="Imię" onfocus="this.placeholder=''" onblur="this.placeholder='Imię'" required>
 
 								<?php
 									if (isset($_SESSION['e_username']))
@@ -189,21 +176,13 @@
 									}
 								?>
 
-								<input type="text" value="<?php
-									if (isset($_SESSION['fr_addres']))
-										{
-											echo $_SESSION['fr_addres'];
-											unset($_SESSION['fr_addres']);
-										} 
-								?>" name="addres" placeholder="adres" onfocus="this.placeholder=''" onblur="this.placeholder='adres'" required>
-
 								<input type="email" value="<?php
 									if (isset($_SESSION['fr_email']))
 									{
 										echo $_SESSION['fr_email'];
 										unset($_SESSION['fr_email']);
 									}
-								?>" name="email" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='email'" required>
+								?>" name="email" placeholder="E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" required>
 
 								<?php
 									if (isset($_SESSION['e_email']))
@@ -219,7 +198,7 @@
 										echo $_SESSION['fr_haslo1'];
 										unset($_SESSION['fr_haslo1']);
 									}
-								?>" name="haslo1" placeholder="hasło" onfocus="this.placeholder=''" onblur="this.placeholder='hasło'" required>
+								?>" name="haslo1" placeholder="Hasło" onfocus="this.placeholder=''" onblur="this.placeholder='Hasło'" required>
 
 								<?php
 									if (isset($_SESSION['e_haslo']))
@@ -235,7 +214,7 @@
 										echo $_SESSION['fr_haslo2'];
 										unset($_SESSION['fr_haslo2']);
 									}
-								?>" name="haslo2" placeholder="powtórz hasło" onfocus="this.placeholder=''" onblur="this.placeholder='powtórz hasło'" required>
+								?>" name="haslo2" placeholder="Powtórz hasło" onfocus="this.placeholder=''" onblur="this.placeholder='Powtórz hasło'" required>
 
 								
 								<label id="checklabel">
@@ -276,10 +255,9 @@
 	
 	</main>
 	
-	<!-- footer nie klei się do spodu strony jak pole logowania się rozszerza- poprawić!!! -->
-	<div id="footer">
-		Aplikacja budżetowa &copy; Wszelkie prawa zastrzeżone
-	</div>
+		<footer class="navbar-text fixed-bottom text-center bg-dark">
+			Aplikacja budżetowa &copy; Wszelkie prawa zastrzeżone
+		</footer>
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
